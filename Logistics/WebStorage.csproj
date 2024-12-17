@@ -1,0 +1,79 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <RootNamespace>Employee</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="6.2.3" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.13">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.13">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Route\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Route\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Route\Update.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Export\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Vacation\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Vacation\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Vacation\Update.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Promotion\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Promotion\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Promotion\Update.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Profession\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Profession\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Profession\Update.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Position\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Position\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Position\Update.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\PassportDetail\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\PassportDetail\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\PassportDetail\Update.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\MedicalExamination\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\MedicalExamination\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\MedicalExamination\Update.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Lateness\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Lateness\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\EmployeeTraining\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\EmployeeTraining\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\EmployeeTraining\Update.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Employee\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Employee\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Employee\Update.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Department\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Department\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Department\Update.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Dismissal\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Dismissal\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Dismissal\Update.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Web.config">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FileServer\FileServer.csproj" />
+    <ProjectReference Include="..\OclUdp\OclUdp.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Files" />
+  </ItemGroup>
+
+</Project>

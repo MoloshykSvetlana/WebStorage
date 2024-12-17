@@ -1,0 +1,60 @@
+﻿@model FileServer.Models.AccessModel
+
+@{ ViewData["Title"] = "Редактирование"; }
+
+<div class="container">
+    <h1>Обновить</h1>
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post" asp-action="Update" asp-route-id="@Model.Id">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <input asp-for="Id" hidden="hidden" class="form-control" />
+                <div class="form-group">
+                    <label asp-for="UserModelId" class="control-label"></label>
+                    <select asp-for="UserModelId" class="form-control">
+                        @foreach (var item in ViewBag.Employee)
+                        {
+                            <option value="@item.Id">@item.Login</option>
+                        }
+                    </select>
+                    <span asp-validation-for="UserModelId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FileModelId" class="control-label"></label>
+                    <select asp-for="FileModelId" class="form-control">
+                        @foreach (var item in ViewBag.Files)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                    <span asp-validation-for="FileModelId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AccessLevel" class="control-label"></label>
+                    <select asp-for="AccessLevel" class="form-control">
+                        @foreach (var item in ViewBag.Radio)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                    <span asp-validation-for="AccessLevel" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Сохранить" class="btn btn-success" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Назад</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

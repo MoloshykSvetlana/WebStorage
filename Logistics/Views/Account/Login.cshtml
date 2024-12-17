@@ -1,0 +1,25 @@
+﻿@model Employee.Views.LoginModel
+
+<h2>Вход на сайт</h2>
+
+
+
+<form asp-action="Login" asp-controller="Account" asp-anti-forgery="true">
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+    <div class="col-4">
+        <div class="form-group">
+            <label asp-for="Login">Введите логин</label>
+            <input class="form-control" type="text" asp-for="Login" />
+            <span asp-validation-for="Login" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Password">Введите пароль</label>
+            <input class="form-control" asp-for="Password" />
+            <span asp-validation-for="Password" />
+        </div>
+        <div class="form-group mt-1">
+            <input type="submit" value="Войти" class="col btn btn-outline-dark" />
+            <a asp-action="Register" asp-controller="Account" class="col btn btn-outline-dark mt-1">Регистрация</a>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,29 @@
+﻿@model FileServer.Models.FileModel
+
+@{ ViewData["Title"] = "Создание"; }
+
+<div class="container">
+    <h1>Выберите файл для загрузки</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <form asp-action="Create"  enctype="multipart/form-data">
+                <input type="file" name="uploadedFile" class="form-control-file" /><br>
+
+                <div class="form-group">
+                    <input type="submit" value="Добавить" class="btn btn-primary mt-2" />
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <div>
+        <a asp-action="Index">Назад</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
